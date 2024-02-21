@@ -5,8 +5,9 @@
 public class Carro {
 
     private String modelo;
-    private double precoMedio;
-    private int ano;
+    private double precoAno1;
+    private double precoAno2;
+    private double precoAno3;
 
     public String getModelo() {
         return modelo;
@@ -16,23 +17,41 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public double getPrecoMedio() {
-        return precoMedio;
+    public double getPrecoAno1() {
+        return precoAno1;
     }
 
-    public void setPrecoMedio(double precoMedio) {
-        this.precoMedio = precoMedio;
+
+    public double getPrecoAno2() {
+        return precoAno2;
     }
 
-    public int getAno() {
-        return ano;
+
+    public double getPrecoAno3() {
+        return precoAno3;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+
+    public void incluiPrecoMedio(double precoAno1, double precoAno2, double precoAno3){
+        this.precoAno1 = precoAno1;
+        this.precoAno2 = precoAno2;
+        this.precoAno3 = precoAno3;
     }
 
-    public void calculaPreco(){
+    public double calculaMenorPreco(){
+        return Math.min(Math.min(precoAno1, precoAno2), precoAno3);
+    }
 
+    public double calculaMaiorPreco(){
+        return Math.max(Math.min(precoAno1, precoAno2), precoAno3);
+    }
+
+    public void exibirInfo() {
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Preço Ano 1: " + precoAno1);
+        System.out.println("Preço Ano 2: " + precoAno2);
+        System.out.println("Preço Ano 3: " + precoAno3);
+        System.out.println("Menor Preço: " + calculaMenorPreco());
+        System.out.println("Maior Preço: " + calculaMaiorPreco());
     }
 }
