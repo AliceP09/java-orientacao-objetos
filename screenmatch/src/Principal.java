@@ -10,10 +10,8 @@ public class Principal {
     public static void main(String[] args) {
 
         // Instância de um objeto, uma nova referência.
-        Filme meuFilme = new Filme();
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
 
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -25,10 +23,8 @@ public class Principal {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
+        Serie lost = new Serie("Lost", 2000);
 
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
 
         lost.exibeFichaTecnica();
 
@@ -37,10 +33,8 @@ public class Principal {
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
+        Filme outroFilme = new Filme("Avatar", 2023);
 
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -60,10 +54,8 @@ public class Principal {
 
         filtroRecomendacao.filtra(episodio);
 
-        var filmeDaAlice = new Filme();
-        filmeDaAlice.setNome("Dogville");
+        var filmeDaAlice = new Filme("Dogville", 2003);
         filmeDaAlice.setDuracaoEmMinutos(200);
-        filmeDaAlice.setAnoDeLancamento(2003);
         filmeDaAlice.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
